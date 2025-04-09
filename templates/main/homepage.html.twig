@@ -1,5 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} Starshop {% endblock %}
+{% block body %}
 <h1><strong>Hello World !</strong></h1>
-
 <div>
     <p>Nous possédons une flotte de {{  numberOfStarships }} vaisseaux spaciaux</p>
     {% if numberOfStarships > 400 %}
@@ -7,6 +9,7 @@
     {% endif %}
 </div>
 
+    <h2>Votre vaisseau</h2>
 <div>
     <table>
         <tr>
@@ -23,3 +26,4 @@
         </tr>
     </table>
 </div>
+{% endblock %}
