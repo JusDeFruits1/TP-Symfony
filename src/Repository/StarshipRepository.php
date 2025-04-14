@@ -14,6 +14,7 @@ class StarshipRepository
     public function findAll(): array
     {
         $this->logger->info('Collection de vaisseaux spatiaux récupérée');
+
         return [
             new Starship(
                 1,
@@ -37,5 +38,16 @@ class StarshipRepository
                 'under construction',
             ),
         ];
+    }
+
+    public function find(int $id): ?Starship
+    {
+        foreach ($this->findAll() as $starship) {
+            if ($starship->getId() === $id) {
+                return $starship;
+                break;
+            }
+        }
+        return null;
     }
 }
